@@ -84,3 +84,27 @@ templates:
       linkcolor: Mahogany
       citecolor: Sepia
       urlcolor: BrickRed
+#######################################
+  beamer-with-refs-latex:
+    extends: ['refs'] #we can inherit from other templates
+    pandoc:
+      from: markdown
+      to: latex
+      template: ./beamer.latex
+      toc: true
+      toc-depth: 4
+      base-header-level: 2
+      filter:
+        - 'filters/assimilateMetadata' #regularise metadata fields so pandoc template can use it more easily
+    metadata:
+      lang: 'en-GB'
+      papersize: 'A4'
+      documentclass: 'article'
+      fontsize: '12pt'
+      linestretch: '1.75'
+      geometry: 'margin=2cm'
+      kotex: true
+      nonumberfigures: true
+      linkcolor: Mahogany
+      citecolor: Sepia
+      urlcolor: BrickRed
