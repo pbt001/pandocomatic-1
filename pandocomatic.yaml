@@ -79,6 +79,7 @@ templates:
       fontsize: '12pt'
       linestretch: '1.75'
       geometry: 'margin=2cm'
+      kotex: true
       nonumberfigures: true
       linkcolor: Mahogany
       citecolor: Sepia

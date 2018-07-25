@@ -26,6 +26,10 @@ $endif$
 $if(beamerarticle)$
 \usepackage{beamerarticle} % needs to be loaded first
 $endif$
+$if(kotex)$
+\usepackage{kotex}
+\usepackage[utf8]{inputenc}
+$endif$
 $if(fontfamily)$
 \usepackage[$for(fontfamilyoptions)$$fontfamilyoptions$$sep$,$endfor$]{$fontfamily$}
 $else$
