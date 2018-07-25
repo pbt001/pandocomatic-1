@@ -89,18 +89,17 @@ templates:
     extends: ['refs'] #we can inherit from other templates
     pandoc:
       from: markdown
-      to: latex
+      to: beamer
       template: ./beamer.latex
       toc: true
-      toc-depth: 4
-      base-header-level: 2
+      slide-level: 2
       filter:
         - 'filters/assimilateMetadata' #regularise metadata fields so pandoc template can use it more easily
     metadata:
-      lang: 'en-GB'
-      papersize: 'A4'
-      documentclass: 'article'
-      fontsize: '12pt'
+      documentclass: 'beamer'
+      aspectratio: '169'
+      fontsize: '10pt'
+      theme: 'metropolis'
       linestretch: '1.75'
       geometry: 'margin=2cm'
       kotex: true
