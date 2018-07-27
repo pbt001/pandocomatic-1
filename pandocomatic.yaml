@@ -22,6 +22,20 @@ templates:
     postprocessors: [] #runs on the output file (unless it is binary like docx)
     cleanup: [] #general cleanup script
 #######################################
+  refs-natbib:
+    setup: [] #runs a general script to rename or copy files before etc.
+    preprocessors: [] #runs a script on the markdown file itself
+    pandoc:
+      standalone: true #create complete document
+      natbib: true
+      bibliography: bibliography/workflow.bib #bibtex file
+      csl: csl/apa.csl #CSL style file
+    metadata:
+      notes-after-punctuation: false
+      link-citations: true
+    postprocessors: [] #runs on the output file (unless it is binary like docx)
+    cleanup: [] #general cleanup script
+#######################################
   paper-with-refs-docx:
     extends: ['refs'] #we can inherit from other templates
     pandoc:
@@ -92,7 +106,7 @@ templates:
       to: beamer
       template: ./beamer.latex
       toc: true
-      slide-level: 2
+      slide-level: 3
       filter:
         - 'filters/assimilateMetadata' #regularise metadata fields so pandoc template can use it more easily
     metadata:
